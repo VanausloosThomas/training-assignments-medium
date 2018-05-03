@@ -24,7 +24,7 @@ import java.util.Date;
  * The Interface MonkeyCalendar used to tell if a monkey should be running or now. We only want monkeys to run during
  * business hours, so that engineers will be on-hand if something goes wrong.
  */
-public interface MonkeyCalendar {
+public interface MonkeyCalendar extends ICalendar {
 
     /**
      * Checks if is monkey time.
@@ -49,18 +49,4 @@ public interface MonkeyCalendar {
      */
     int closeHour();
 
-    /**
-     * Get the current time using whatever timezone is used for monkey date calculations.
-     *
-     * @return the calendar
-     */
-    Calendar now();
-
-    /** Gets the next business day from the start date after n business days.
-     *
-     * @param date the start date
-     * @param n the number of business days from now
-     * @return the business day after n business days
-     */
-    Date getBusinessDay(Date date, int n);
 }
